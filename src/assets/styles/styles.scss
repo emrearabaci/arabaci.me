@@ -1,0 +1,20 @@
+/*
+ * Install fonts
+ */
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap');
+
+.v-btn a {
+    text-decoration: none !important;
+}
+
+.header-font {
+    font-family: 'Comfortaa', cursive;
+    user-select: none;
+}
+
+.breakLine {
+    border: 0;
+    height: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
