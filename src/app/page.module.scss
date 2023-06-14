@@ -1,10 +1,85 @@
+/* Import color configs (./config/colors.scss) */
+@import 'src/config/colors';
+
 .main {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 
+  gap: 1.5em;
+
+  width: 50%;
   min-height: 100vh;
 
+  margin: auto;
   padding: 2em 2em;
+
+  .image {
+    border-radius: 50%;
+  }
+
+  .text {
+    text-align: center;
+
+    &.default {
+      color: $default;
+    }
+    &.description {
+      font-size: 0.8em;
+      color: $description;
+    }
+  }
+
+  .links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 0.8em;
+
+    .link {
+      font-size: 0.8em;
+      color: $description;
+
+      transition: 160ms ease;
+
+      &:hover {
+        padding: 0 2em;
+
+        text-decoration: none;
+
+        transform: scale(1.5) rotateZ(-15deg);
+        transition: 160ms ease;
+      }
+    }
+  }
+
+  .underline {
+    width: 10%;
+
+    border-bottom: 1px solid $platinum;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .main {
+    min-width: 80%;
+
+    .links {
+      flex-direction: column;
+
+      .link {
+        &:hover {
+          transform: scale(1.5) rotateZ(-15deg);
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1366px) {
+  .main {
+    max-width: 1366px;
+  }
 }
