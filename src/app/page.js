@@ -1,6 +1,5 @@
 /* Next API */
 import Image from 'next/image';
-import Link from 'next/link';
 
 /* Styles */
 import styles from '@/app/page.module.scss';
@@ -11,51 +10,54 @@ const sourceCodePro = Source_Code_Pro({ subsets: ['latin'] });
 
 export default function Home() {
   return (
-    <div className={`${sourceCodePro.className} ${styles.main}`}>
+    <main className={`${sourceCodePro.className} ${styles.main}`}>
       <Image
         className={styles.image}
         src={'/eaProfile.png'}
-        alt={'emre arabaci'}
+        alt={'Portrait of Emre Arabaci'}
         width={140}
         height={140}
         quality={100}
         priority={true}
       />
 
-      <p className={`${styles.text} ${styles.description}`}>
+      <h1 className={`${styles.text} ${styles.description}`}>
         Hi, I&#39;m Emre Arabaci
-      </p>
-      <div className={styles.underline} />
+      </h1>
+      <div className={styles.underline} aria-hidden={'true'} />
       <p className={`${styles.text} ${styles.default}`}>
         I like to building user friendly apps, historical research and playing
         guitar.
       </p>
 
-      <div className={styles.underline} />
+      <div className={styles.underline} aria-hidden={'true'} />
 
-      <div className={styles.links}>
-        <Link
+      <nav className={styles.links} aria-label={'Social profiles'}>
+        <a
           className={styles.link}
           href={'https://www.linkedin.com/in/earabaci'}
           target={'_blank'}
+          rel={'noopener noreferrer'}
         >
           linkedin
-        </Link>
-        <Link
+        </a>
+        <a
           className={styles.link}
           href={'https://github.com/emrearabaci'}
           target={'_blank'}
+          rel={'noopener noreferrer'}
         >
           github
-        </Link>
-        <Link
+        </a>
+        <a
           className={styles.link}
           href={'https://stackoverflow.com/users/11316848/emre-arabaci'}
           target={'_blank'}
+          rel={'noopener noreferrer'}
         >
           stackoverflow
-        </Link>
-      </div>
-    </div>
+        </a>
+      </nav>
+    </main>
   );
 }

@@ -1,5 +1,5 @@
 /* Import color configs (./config/colors.scss) */
-@import 'src/config/colors';
+@use '../config/colors' as colors;
 
 .main {
   display: flex;
@@ -23,11 +23,12 @@
     text-align: center;
 
     &.default {
-      color: $default;
+      color: colors.$default;
     }
     &.description {
       font-size: 0.8em;
-      color: $description;
+      font-weight: inherit;
+      color: colors.$description;
     }
   }
 
@@ -39,18 +40,22 @@
     gap: 0.8em;
 
     .link {
+      display: inline-block;
+
       font-size: 0.8em;
-      color: $description;
+      color: colors.$description;
 
       transition: 160ms ease;
 
       &:hover {
-        padding: 0 2em;
-
         text-decoration: none;
 
         transform: scale(1.5) rotateZ(-15deg);
-        transition: 160ms ease;
+      }
+
+      &:focus-visible {
+        outline: 2px solid currentColor;
+        outline-offset: 4px;
       }
     }
   }
@@ -58,7 +63,7 @@
   .underline {
     width: 10%;
 
-    border-bottom: 1px solid $platinum;
+    border-bottom: 1px solid colors.$platinum;
   }
 }
 
@@ -72,6 +77,20 @@
       .link {
         &:hover {
           transform: scale(1.5) rotateZ(-15deg);
+        }
+      }
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .main {
+    .links {
+      .link {
+        transition: none;
+
+        &:hover {
+          transform: none;
         }
       }
     }
