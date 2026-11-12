@@ -36,7 +36,7 @@ export default function Home() {
       <div className={styles.links}>
         <Link
           className={styles.link}
-          href={'https://linkedin.com/in/emrearabaci'}
+          href={'https://www.linkedin.com/in/earabaci'}
           target={'_blank'}
         >
           linkedin
@@ -47,27 +47,6 @@ export default function Home() {
           target={'_blank'}
         >
           github
-        </Link>
-        <Link
-          className={styles.link}
-          href={'https://codepen.io/arabaci'}
-          target={'_blank'}
-        >
-          codepen
-        </Link>
-        <Link
-          className={styles.link}
-          href={'https://www.figma.com/@arabaci'}
-          target={'_blank'}
-        >
-          figma
-        </Link>
-        <Link
-          className={styles.link}
-          href={'https://www.codewars.com/users/arabaci'}
-          target={'_blank'}
-        >
-          codewars
         </Link>
         <Link
           className={styles.link}
